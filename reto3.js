@@ -53,31 +53,15 @@ class Person {
 
 //Reto3.
 console.log('\n\x1b[36m%s\x1b[0m', 'Reto 3.');
-let arrayAnswer= [];
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// rl.question('Escribir los datos del objeto\n' +
-//             'siguiendo este estricto formato:\n' +
-//             'Nombre,Apellido,Edad\n', (answer) => {
-//     arrayAnswer = (answer.split(','));
-//     let myPerson = new Person (arrayAnswer[0], arrayAnswer[1], arrayAnswer[2]);
-//     rl.close();
-//     console.log('\n1. objeto Person \'myPerson\' + creado por consola. (1/4 OK)\n'
-//     + JSON.stringify(myPerson));
-//     let contactsFile = 'contactsFile.json';
-//     myPerson.writeNReadJson(contactsFile);
-// });
-
 rl.question ('Nombre: ', (answer1) => {
-    arrayAnswer.push(answer1);
     rl.question ('Apellido: ', (answer2) => {
-        arrayAnswer.push(answer2);
         rl.question ('Edad: ', (answer3) => {
-            arrayAnswer.push(answer3)
-            let myPerson = new Person (arrayAnswer[0], arrayAnswer[1], arrayAnswer[2]);
+            let myPerson = new Person (answer1, answer2, answer3);
             rl.close();
             console.log('\n1. objeto Person \'myPerson\' creado por consola. (1/4 OK)');
             console.log(myPerson);
